@@ -9,7 +9,13 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
-      <Button title="Play Sound" onPress={() => player.play()} />
+      <Button
+        title="Play Sound"
+        onPress={async () => {
+          await player.seekTo(0);
+          player.play();
+        }}
+      />
     </View>
   );
 }
